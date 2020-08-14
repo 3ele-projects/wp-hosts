@@ -37,7 +37,19 @@
         }
       </field>
     </record>
-  
+    <record id="wp_instance_backup_action" model="ir.actions.server">
+            <field name="name">Backup Data</field>
+            <field name="model_id" ref="model_wp_instance_wp_core"/>
+            <field name="binding_model_id" ref="model_wp_instance_wp_core"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+              
+                   records.backup_data()        
+            </field>
+        </record>
+
+
 <record model="ir.ui.view" id="inherit_model_wp_instance_wp_core_inherit">
       <field name="name">model_wp_instance_wp_core</field>
       <field name="model">wp_instance.wp_core</field>
