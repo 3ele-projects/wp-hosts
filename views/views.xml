@@ -52,7 +52,7 @@
                                    <group>
                                     <group>
                            
-                                        <field name="wp_hosts" widget="one2many"/>
+                                        <field name="wp_hosts"/>
                             
    
                                     </group>
