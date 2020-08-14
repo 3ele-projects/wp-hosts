@@ -11,7 +11,7 @@ class wp_instance_hosts(models.Model):
     host = fields.Char(string='host')
     ssh_port = fields.Integer(string='Port')
     wp_cli_path = fields.Integer(string='wp_cli_path')
-    wp_instances = fields.One2many('wp_instance.wp_core', 'WP Instances')
+    wp_instances = fields.One2many('wp_instance.wp_core', 'wp_instances')
 
 
 class wp_instance_core_inherit(models.Model):
@@ -23,4 +23,4 @@ class wp_instance_core_inherit(models.Model):
     host = fields.Char(string='host')
     ssh_port = fields.Integer(string='Port')
     wp_cli_path = fields.Char(string='wp_cli_path')
-    wp_hosts = fields.Many2one('wp_instance.wp_hosts', 'wp_instances')
+    wp_hosts = fields.Many2one('wp_instance.wp_hosts', 'wp instances')
