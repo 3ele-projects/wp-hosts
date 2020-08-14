@@ -1,0 +1,92 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="wp-hosts.list">
+      <field name="name">wp-hosts list</field>
+      <field name="model">wp_instance.wp_hosts</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="wp-hosts.action_window">
+      <field name="name">wp-hosts window</field>
+      <field name="res_model">wp_instance.wp_hosts</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+  
+    <record model="ir.actions.server" id="wp-hosts.action_server">
+      <field name="name">wp-hosts server</field>
+      <field name="model_id" ref="model_wp_instance_wp_hosts"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+  
+<record model="ir.ui.view" id="inherit_model_wp_instance_wp_core_inherit">
+      <field name="name">model_wp_instance_wp_core</field>
+      <field name="model">wp_instance.wp_core</field>
+      <field name="inherit_id" ref="wp-core.wp_core_form"/>
+      <field name="arch" type="xml">
+
+   <xpath expr="//page[@name='host']" position="after">
+
+ 
+                            <page name="hosts" string="Hosts">
+
+                                   <group>
+                                    <group>
+                           
+                                        <field name="wp_hosts" widget="one2many"/>
+                            
+   
+                                    </group>
+                                          </group>
+                            </page>
+
+ 
+      
+          
+        </xpath>
+ 
+      </field>
+
+
+
+    </record>
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="wp-hosts" id="wp-hosts.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="wp-hosts.menu_1" parent="wp-hosts.menu_root"/>
+    <menuitem name="Menu 2" id="wp-hosts.menu_2" parent="wp-hosts.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="wp-hosts.menu_1_list" parent="wp-hosts.menu_1"
+              action="wp-hosts.action_window"/>
+    <menuitem name="Server to list" id="wp-hosts" parent="wp-hosts.menu_2"
+              action="wp-hosts.action_server"/>
+    -->
+     <menuitem name="WordPress Hosts" id="wp_hosts_menu_1" parent="wp-core.wp_instance_menu_root"/>
+      <menuitem name="Hosts" id="wp_hosts" parent="wp_hosts_menu_1"
+                  action="wp-hosts.action_window"/>
+  </data>
+</odoo>
