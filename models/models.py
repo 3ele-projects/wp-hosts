@@ -17,13 +17,7 @@ class wp_instance_hosts(models.Model):
 
 class wp_instance_core_inherit(models.Model):
     _inherit = 'wp_instance.wp_core'
-    name = fields.Char()
-    description = fields.Text()
-    user = fields.Char(string='user')
-    host = fields.Char(string='host')
-    ssh_port = fields.Integer(string='Port')
-    wp_cli_path = fields.Char(string='wp_cli_path')
-    wp_hosts = fields.Many2one('wp_instance.wp_hosts', 'wp_instances')
+    wp_hosts = fields.Many2one('wp_instance.wp_hosts', 'Hoster')
     
     @api.multi
     def backup_data(self):
