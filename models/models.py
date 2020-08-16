@@ -15,13 +15,8 @@ class wp_instance_hosts(models.Model):
     wp_instances = fields.One2many('wp_instance.wp_core', 'wp_hosts')
     partner = fields.Many2one('res.partner')
 
-       
-
-
-
 class wp_instance_core_inherit(models.Model):
     _inherit = 'wp_instance.wp_core'
-
     name = fields.Char()
     description = fields.Text()
     user = fields.Char(string='user')
