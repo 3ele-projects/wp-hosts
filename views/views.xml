@@ -13,6 +13,38 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="wp-hosts_form">
+      <field name="name">wp-hosts form</field>
+      <field name="model">wp_instance.wp_hosts</field>
+      <field name="arch" type="xml">
+        <form>
+                   <header>
+                                 <h1 id="name" class="">
+
+                            <field name="name"/>
+
+                        </h1>
+                    </header>
+
+
+                    <sheet>
+                    <group>
+                    <field name="name"/>
+        <field name="partner"/>  
+                    </group>
+                    <group>
+                    <field name="user"/>
+        <field name="host"/>  
+                    </group>
+                    <group>
+                    <field name="descritpion"/>
+        <field name="wp_instances"/>  
+                    </group>
+                    </sheet>
+        
+        </form>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
 
@@ -62,12 +94,17 @@
                             <page name="hosts" string="Hosts">
 
                                    <group>
-                                    <group>
+             
                            
-                                        <field name="wp_hosts" widget="many2one"/>
-                            
-   
-                                    </group>
+                                        <field name="wp_hosts">
+           <tree>
+                <field name="name"/>
+            <field name="host"/>
+            <field name="user"/>
+              
+           </tree>                 
+   </field>
+                              
                                           </group>
                             </page>
 
