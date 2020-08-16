@@ -21,7 +21,8 @@ class wp_instance_core_inherit(models.Model):
     
     extern_ssh_updates = fields.Boolean('extern SSH updates Service')
     extern_backups = fields.Boolean('extern Backup Service')
-    
+    sql_path = fields.Char(string='SQL Path')
+    ssh_port = fields.Integer(string='Port')  
     @api.multi
     def backup_data(self):
         data_set = []
