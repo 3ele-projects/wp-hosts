@@ -95,7 +95,8 @@
 
                                    <group>
              
-                           
+                               <field name="wp_path"/>
+                                        <field name="sql_path"/>      
                                         <field name="wp_hosts">
            <tree>
                 <field name="name"/>

@@ -19,6 +19,9 @@ class wp_instance_core_inherit(models.Model):
     _inherit = 'wp_instance.wp_core'
     wp_hosts = fields.Many2one('wp_instance.wp_hosts', 'Hoster')
     
+    extern_ssh_updates = fields.Boolean('extern SSH updates Service')
+    extern_backups = fields.Boolean('extern Backup Service')
+    
     @api.multi
     def backup_data(self):
         data_set = []
