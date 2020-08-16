@@ -37,7 +37,7 @@
         <field name="host"/>  
                     </group>
                     <group>
-                    <field name="descritpion"/>
+                    <field name="descripion"/>
         <field name="wp_instances"/>  
                     </group>
                     </sheet>
