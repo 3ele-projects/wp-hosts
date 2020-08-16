@@ -88,7 +88,7 @@
       <field name="inherit_id" ref="wp-core.wp_core_form"/>
       <field name="arch" type="xml">
 
-   <xpath expr="//page[@name='host']" position="after">
+   <xpath expr="//page[@name='servcies']" position="after">
 
  
                             <page name="hosts" string="Hosts">
@@ -114,6 +114,18 @@
           
         </xpath>
  
+   <xpath expr="//page[@name='servcies']" position="inside">
+
+ <group>
+             <field name="extern_backups"/>     
+ </group>
+                             
+                         
+        
+      
+          
+        </xpath>
+
       </field>
 
 
